@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Redirigir todas las solicitudes de app.php/* a app.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^app\.php/(.*)$ app.php [L,QSA]
+
+# Redirigir todas las solicitudes de admin.php/* a admin.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^admin\.php/(.*)$ admin.php [L,QSA]
+
+# Redirigir la raíz a index.html
+RewriteRule ^$ index.html [L] 
